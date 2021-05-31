@@ -1,0 +1,22 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Lakers vs Clippers - December 11th 2020",
+      "subtitle": "Lakers to help kick off NBA preseason on Dec. 11 vs. Clippers",
+      "content": "The start of the NBA’s preseason will feature the NBA’s defending champion Los Angeles Lakers, who will face off against their crosstown rival Los Angeles Clippers, who are once again seen as a potential foil to the Lakers success in the coming season."
+    },
+    {
+      "id": 2,
+      "title": "2020 United States Election Results: Biden defeats Trump",
+      "subtitle": "Joe Biden has defeated Donald Trump after taking the 20 electoral votes of Pennsylvania",
+      "content": "Biden will be the 46th president of the United States. Results have yet to be confirmed in Arizona, Georgia, and North Carolina, which experience delays due to vote-by-mail counting."
+    },
+    {
+      "id": 3,
+      "title": "Effects of global warming",
+      "subtitle": "The signs of global warming are everywhere, and are more complex than just climbing temperatures",
+      "content": "The planet is warming, from North Pole to South Pole. Since 1906, the global average surface temperature has increased by more than 1.6 degrees Fahrenheit (0.9 degrees Celsius)—even more in sensitive polar regions. And the impacts of rising temperatures aren’t waiting for some far-flung future–the effects of global warming are appearing right now."
+    }
+  ]
+}
