@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["about"],{f820:function(t,n,e){"use strict";e.r(n);var a=function(){var t=this,n=t.$createElement,e=t._self._c||n;return e("div",{staticClass:"about"},[e("h1",[t._v("About us")]),e("b-jumbotron",[e("h5",[e("i",[t._v("The Post")]),t._v(" is an international newspaper that writes articles about what goes on in the current world "),e("br"),t._v(" around us. It has offices all over the world including New York City, Denver, Barcelona and Milan ")])])],1)},o=[],r=e("2877"),s={},i=Object(r["a"])(s,a,o,!1,null,null,null);n["default"]=i.exports}}]);
-//# sourceMappingURL=about.376f3f0a.js.map
+//# sourceMappingURL=about.c5ff2765.js.map
