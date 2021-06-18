@@ -6,12 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-<<<<<<< HEAD
     "start": "vue-cli-service serve"
-=======
-    "deploy": "sh deploy.sh",
-    "start": "sh deploy.sh"
->>>>>>> 9cc36f6783347aabf32366c59ce9270f6e49bbb5
   },
   "dependencies": {
     "axios": "^0.21.1",
