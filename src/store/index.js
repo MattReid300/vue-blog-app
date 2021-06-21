@@ -14,7 +14,7 @@ export default new Vuex.Store({
     DISPLAY_ADD_ARTICLE_LINK: state => {
       state.showAddArticleLink = true;
     },
-    SET_ARTICLES: (state, articles) => {
+    SET_ARTICLES: (state, { articles }) => {
       state.articles = articles;
     },
     ADD_ARTICLE: (state, article) => {

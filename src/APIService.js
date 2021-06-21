@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "http://localhost:8080",
   withCredentials: false,
   headers: {
     Accept: "application/json",
@@ -11,13 +11,13 @@ const apiClient = axios.create({
 
 export default {
   getArticles() {
-    return apiClient.get("/articles");
+    return apiClient.get("/api/articles");
   },
   getArticle(id) {
-    return apiClient.get("/articles/" + id);
+    return apiClient.get("/api/articles/" + id);
   },
   postArticle(article) {
-    return apiClient.post("/articles", article);
+    return apiClient.post("/api/articles", article);
   }
 };
 
