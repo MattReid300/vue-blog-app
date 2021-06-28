@@ -21,6 +21,19 @@ export default {
   // },
   props: {
     article: Object
+  },
+  data() {
+    return {
+      newtId: this.article.id
+    };
+  },
+  methods: {
+    nextArt() {
+      this.newId = this.newId + 1;
+    }
+  },
+  mounted() {
+    this.$root.$on("next-art", this.nextArt);
   }
 };
 </script>

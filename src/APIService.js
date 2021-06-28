@@ -18,6 +18,14 @@ export default {
   },
   postArticle(article) {
     return apiClient.post("/articles", article);
+  },
+  nextArticle(id) {
+    id = id + 1;
+    return apiClient.get("/articles/" + id);
+  },
+  prevArticle(id) {
+    id = id - 1;
+    return apiClient.get("/articles/" + id);
   }
 };
 

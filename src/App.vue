@@ -16,7 +16,9 @@
 
 <script>
 window.addEventListener("load", () => {
-  alert("Este proyecto es solamente para practicar código, puede contener información falsa");
+  alert(
+    "Este proyecto es solamente para practicar código, puede contener información falsa"
+  );
 });
 import Sidebar from "@/components/Sidebar.vue";
 export default {

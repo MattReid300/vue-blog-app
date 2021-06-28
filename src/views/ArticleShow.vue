@@ -1,6 +1,28 @@
 <template>
   <div class="main">
-    <h3><b><i>{{ article.title }}</i></b></h3>
+    <div class="buttons">
+      <button class="previous" @click="prevArticle">
+        <b-icon
+          icon="arrow-left-square-fill"
+          scale="1.3"
+          style="margin-right: 10px"
+        ></b-icon>
+        Previous
+      </button>
+      <button class="next" @click="nextArticle">
+        Next
+        <b-icon
+          icon="arrow-right-square-fill"
+          scale="1.3"
+          style="margin-left: 10px"
+        ></b-icon>
+      </button>
+    </div>
+    <h3>
+      <b
+        ><i>{{ article.title }}</i></b
+      >
+    </h3>
     <h5 style="color: gray">{{ article.subtitle }}</h5>
     <br />
     <p>{{ article.content }}</p>
@@ -16,14 +38,27 @@ export default {
       article: {}
     };
   },
-  created() {
-    APIService.getArticle(this.id)
-      .then(response => {
+  mounted() {
+    this.fetchData();
+  },
+  methods: {
+    fetchData(id = this.id) {
+      APIService.getArticle(id).then(response => {
         this.article = response.data;
       });
-      // .catch(error => {
-      //   console.log("There was an error:", error.response);
-      // });
+    },
+    nextArticle() {
+      const current = this.$route.params.id;
+      const newId = Number(current) + 1;
+      this.$router.push(`/articles/${newId}`);
+      this.fetchData(newId);
+    },
+    prevArticle() {
+      const current = this.$route.params.id;
+      const newId = Number(current) - 1;
+      this.$router.push(`/articles/${newId}`);
+      this.fetchData(newId);
+    }
   }
 };
 </script>
@@ -32,5 +67,17 @@ export default {
 .main {
   text-align: left;
   margin-left: 50px;
+  margin-right: 50px;
 }
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+/* .previous {
+  justify-content: left;
+}
+.next {
+  justify-content: right;
+} */
 </style>

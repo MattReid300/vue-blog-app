@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 style="text-align: left; margin-left: 30px">Recomended Articles</h1>
+    <h1 style="text-align: left; margin-left: 30px">Recent Articles</h1>
     <ArticleCard
       v-for="article in articles"
       :key="article.id"
