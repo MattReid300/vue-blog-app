@@ -55,7 +55,6 @@ export default {
     nextArticle() {
       const current = this.$route.params.id;
       const newId = Number(current) + 1;
-      console.log(this.$store.state.articles.length);
       if (newId <= this.$store.state.articles.length) {
         this.$router.push(`/articles/${newId}`);
         this.fetchData(newId);
