@@ -31,12 +31,17 @@
 
 <script>
 import APIService from "@/APIService.js";
+import { mapState } from 'vuex';
 export default {
   props: ["id"], // "id" has been passed as a prop when I import this file to its parent
   data() {
     return {
-      article: {}
+      article: {},
+      articleList: this.$store.state.articles
     };
+  },
+  computed: {
+    ...mapState(["articles"])
   },
   mounted() {
     this.fetchData();
@@ -50,14 +55,23 @@ export default {
     nextArticle() {
       const current = this.$route.params.id;
       const newId = Number(current) + 1;
-      this.$router.push(`/articles/${newId}`);
-      this.fetchData(newId);
+      console.log(this.$store.state.articles.length);
+      if (newId <= this.$store.state.articles.length) {
+        this.$router.push(`/articles/${newId}`);
+        this.fetchData(newId);
+      } else {
+        alert("This is the last article!")
+      }
     },
     prevArticle() {
       const current = this.$route.params.id;
       const newId = Number(current) - 1;
-      this.$router.push(`/articles/${newId}`);
-      this.fetchData(newId);
+      if (current > 1) {
+        this.$router.push(`/articles/${newId}`);
+        this.fetchData(newId);
+      } else {
+        alert("This is the first article!");
+      }
     }
   }
 };
