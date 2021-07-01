@@ -20,7 +20,7 @@ window.addEventListener("load", () => {
     "Este proyecto es solamente para practicar código, puede contener información falsa"
   );
 });
-import Sidebar from "@/components/Sidebar.vue";
+import Sidebar from "./components/Sidebar.vue";
 export default {
   components: {
     Sidebar

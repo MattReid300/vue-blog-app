@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import APIService from "@/APIService.js";
+import APIService from "../APIService";
 
 Vue.use(Vuex);
 

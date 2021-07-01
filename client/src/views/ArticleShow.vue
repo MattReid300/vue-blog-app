@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import APIService from "@/APIService.js";
+import APIService from "../APIService.js";
 import { mapState } from "vuex";
 export default {
   props: ["id"], // "id" has been passed as a prop when I import this file to its parent
@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     fetchData(id = this.id) {
-      APIService.getArticle(id).then((response) => {
+      APIService.getArticle(id).then(response => {
         this.article = response.data;
       });
     },
@@ -69,8 +69,8 @@ export default {
       const newId = Number(current) - 1;
       this.$router.push(`/articles/${newId}`);
       this.fetchData(newId);
-    },
-  },
+    }
+  }
 };
 </script>
 

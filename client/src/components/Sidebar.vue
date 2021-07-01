@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-button v-b-toggle.sidebar-1 id="sidebar-btn">
-      <b-icon icon="list"></b-icon> Options
+      <b-icon icon="list"></b-icon> More...
     </b-button>
     <b-sidebar id="sidebar-1" title="Options" shadow>
       <div class="px-3 py-2">
