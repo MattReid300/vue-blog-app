@@ -1,7 +1,10 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL:
+    process.env.NODE_ENV === "production"
+      ? "https://mattreid-vueblog-app.herokuapp.com"
+      : "http://localhost:3000",
   withCredentials: false,
   headers: {
     Accept: "application/json",
