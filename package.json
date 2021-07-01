@@ -21,6 +21,7 @@
     "lowdb": "1.0.0",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
+    "parcel": "^2.0.0-beta.2",
     "serve-static": "^1.14.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
