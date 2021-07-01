@@ -9,8 +9,8 @@
         Denver, Barcelona and Milan
       </h5>
       <div class="flex">
-        <img id="img-office1" src="..\office1_.jpeg" />
-        <img id="img-office2" src="..\office2_.jpeg" />
+        <!-- <img id="img-office1" src="..\office1_.jpeg" />
+        <img id="img-office2" src="..\office2_.jpeg" /> -->
       </div>
     </b-jumbotron>
   </div>
@@ -26,8 +26,8 @@
 }
 @media screen and (max-width: 550px) {
   [id^="img-office"] {
-  width: 18rem;
-  height: auto;
-}
+    width: 18rem;
+    height: auto;
+  }
 }
 </style>
