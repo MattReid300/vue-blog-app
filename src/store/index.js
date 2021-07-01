@@ -42,5 +42,8 @@ export default new Vuex.Store({
       // });
     }
   },
+  getters: {
+    totalArticles: state => state.articles.length
+  },
   modules: {}
 });

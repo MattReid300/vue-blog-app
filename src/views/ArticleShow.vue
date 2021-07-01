@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="buttons">
-      <button class="previous" @click="prevArticle">
+      <button class="btn-left" v-if="id > 1" @click="prevArticle">
         <b-icon
           icon="arrow-left-square-fill"
           scale="1.3"
@@ -9,7 +9,11 @@
         ></b-icon>
         Previous
       </button>
-      <button class="next" @click="nextArticle">
+      <button
+        class="btn-right"
+        v-if="id < $store.getters.totalArticles"
+        @click="nextArticle"
+      >
         Next
         <b-icon
           icon="arrow-right-square-fill"
@@ -31,13 +35,12 @@
 
 <script>
 import APIService from "@/APIService.js";
-import { mapState } from 'vuex';
+import { mapState } from "vuex";
 export default {
   props: ["id"], // "id" has been passed as a prop when I import this file to its parent
   data() {
     return {
-      article: {},
-      articleList: this.$store.state.articles
+      article: {}
     };
   },
   computed: {
@@ -45,34 +48,29 @@ export default {
   },
   mounted() {
     this.fetchData();
+    if (this.articles == 0) {
+      this.$store.dispatch("fetchArticles");
+    }
   },
   methods: {
     fetchData(id = this.id) {
-      APIService.getArticle(id).then(response => {
+      APIService.getArticle(id).then((response) => {
         this.article = response.data;
       });
     },
     nextArticle() {
       const current = this.$route.params.id;
       const newId = Number(current) + 1;
-      if (newId <= this.$store.state.articles.length) {
-        this.$router.push(`/articles/${newId}`);
-        this.fetchData(newId);
-      } else {
-        alert("This is the last article!")
-      }
+      this.$router.push(`/articles/${newId}`);
+      this.fetchData(newId);
     },
     prevArticle() {
       const current = this.$route.params.id;
       const newId = Number(current) - 1;
-      if (current > 1) {
-        this.$router.push(`/articles/${newId}`);
-        this.fetchData(newId);
-      } else {
-        alert("This is the first article!");
-      }
-    }
-  }
+      this.$router.push(`/articles/${newId}`);
+      this.fetchData(newId);
+    },
+  },
 };
 </script>
 
@@ -83,14 +81,15 @@ export default {
   margin-right: 50px;
 }
 .buttons {
+  margin: 30px auto;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
 }
-/* .previous {
-  justify-content: left;
+.btn-left {
+  display: block;
+  margin-right: auto;
 }
-.next {
-  justify-content: right;
-} */
+.btn-right {
+  display: block;
+  margin-left: auto;
+}
 </style>
