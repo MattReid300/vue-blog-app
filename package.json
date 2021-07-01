@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "node server.js && json-server --watch db.json process.env.PORT"
+    "start": "node server.js && json-server --watch db.json PORT"
   },
   "dependencies": {
     "axios": "^0.21.1",
