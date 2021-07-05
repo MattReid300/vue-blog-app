@@ -28,16 +28,12 @@ export default new Vuex.Store({
     removeArticle: (context, article) => {
       context.commit("REMOVE_ARTICLE", article);
     },
-    createArticle({
-      commit
-    }, article) {
+    createArticle({ commit }, article) {
       return APIService.postArticle(article).then(() => {
         commit("ADD_ARTICLE", article);
       });
     },
-    fetchArticles({
-      commit
-    }) {
+    fetchArticles({ commit }) {
       APIService.getArticles().then(response => {
         commit("SET_ARTICLES", response.data);
       });
@@ -45,6 +41,9 @@ export default new Vuex.Store({
       //   console.log("There was an error" + error.response);
       // });
     }
+  },
+  getters: {
+    totalArticles: state => state.articles.length
   },
   modules: {}
 });
