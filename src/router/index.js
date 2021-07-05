@@ -27,7 +27,7 @@ const routes = [
     component: ArticleAdder
   },
   {
-    path: "/articleshow",
+    path: "/articles/:id",
     name: "ArticleShow",
     component: ArticleShow,
     props: true
