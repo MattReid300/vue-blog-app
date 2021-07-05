@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:3000/api",
+  baseURL: process.env.VUE_APP_BASE_URL,
   withCredentials: false,
   headers: {
     Accept: "application/json",
@@ -18,14 +18,6 @@ export default {
   },
   postArticle(article) {
     return apiClient.post("/articles", article);
-  },
-  nextArticle(id) {
-    id = id + 1;
-    return apiClient.get("/articles/" + id);
-  },
-  prevArticle(id) {
-    id = id - 1;
-    return apiClient.get("/articles/" + id);
   }
 };
 
