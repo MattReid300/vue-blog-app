@@ -19,6 +19,9 @@ export default {
   postArticle(article) {
     return apiClient.post("/articles", article);
   },
+  removeArticle(id) {
+    return apiClient.delete("/articles/" + id);
+  },
   nextArticle(id) {
     id = id + 1;
     return apiClient.get("/articles/" + id);

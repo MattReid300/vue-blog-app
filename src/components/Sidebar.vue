@@ -8,7 +8,7 @@
         <div id="nav">
           <router-link to="/">Home</router-link>
           <router-link to="/about">About </router-link>
-          <router-link to="/articleadder" v-if="showAddArticleLink"
+          <router-link to="/articleadder" v-if="isAdmin"
             >Add Article</router-link
           >
         </div>
@@ -35,14 +35,8 @@ export default {
     };
   },
   methods: {
-    displayArticleAdder() {
-      this.$store.commit("DISPLAY_ADD_ARTICLE_LINK");
-    },
     PasswordCheck() {
-      // this.store.commit("runPasswordCheck");
-      if (this.inputPassword == this.$store.state.moderatorPassword) {
-        this.displayArticleAdder();
-      } else alert("Wrong password, try again");
+      this.store.commit("IS_ADMIN", this.inputPassword);
     }
   },
   computed: {

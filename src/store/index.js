@@ -6,8 +6,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    showAddArticleLink: false,
-    moderatorPassword: "letmepass",
+    isAdmin: false,
+    adminPassword: "letmepass",
     articles: []
   },
   mutations: {
@@ -22,11 +22,18 @@ export default new Vuex.Store({
     },
     REMOVE_ARTICLE: (state, article) => {
       state.articles.splice(article, 1);
+    },
+    IS_ADMIN: (state, password) => {
+      if (password == state.adminPassword) {
+        state.isAdmin = true;
+      } else alert("Wrong password, try again");
     }
   },
   actions: {
-    removeArticle: (context, article) => {
-      context.commit("REMOVE_ARTICLE", article);
+    removeArticle: ({ commit }, id) => {
+      return APIService.removeArticle(id).then(() => {
+        commit("REMOVE_ARTICLE", id);
+      });
     },
     createArticle({ commit }, article) {
       return APIService.postArticle(article).then(() => {
