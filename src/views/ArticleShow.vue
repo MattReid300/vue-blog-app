@@ -78,6 +78,7 @@ export default {
 .main {
   text-align: left;
   margin-left: 50px;
+  margin-right: 40px;
 }
 .buttons {
   margin: 30px auto;

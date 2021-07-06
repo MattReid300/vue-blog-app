@@ -27,24 +27,21 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
 export default {
   data() {
     return {
-      inputPassword: ""
+      inputPassword: "",
+      showAddArticleLink: this.$store.state.showAddArticleLink
     };
   },
-  computed: {
-    ...mapMutations(["DISPLAY_ADD_ARTICLE_LINK"]),
-  },
   methods: {
-    displayArticleAdder() {
-      this.DISPLAY_ADD_ARTICLE_LINK;
-    },
     PasswordCheck() {
       if (this.inputPassword == this.$store.state.adminPassword) {
         this.displayArticleAdder();
       } else alert("Wrong password, try again");
+    },
+    displayArticleAdder() {
+      this.$store.commit("DISPLAY_ADD_ARTICLE_LINK");
     }
   }
 }
