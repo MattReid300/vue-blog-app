@@ -35,6 +35,9 @@ export default {
       inputPassword: ""
     };
   },
+  computed: {
+    ...mapMutations(["DISPLAY_ADD_ARTICLE_LINK"]),
+  },
   methods: {
     displayArticleAdder() {
       this.DISPLAY_ADD_ARTICLE_LINK;
@@ -43,12 +46,9 @@ export default {
       if (this.inputPassword == this.$store.state.adminPassword) {
         this.displayArticleAdder();
       } else alert("Wrong password, try again");
-  },
-  computed: {
-    ...mapState(["showAddArticleLink"]),
-    ...mapMutations(["DISPLAY_ADD_ARTICLE_LINK"]),
+    }
   }
-};
+}
 </script>
 
 <style lang="css" scoped>
