@@ -35,14 +35,10 @@ export default {
     };
   },
   methods: {
-    PasswordCheck() {
-      this.store.commit("IS_ADMIN", this.inputPassword);
-    },
     displayArticleAdder() {
       this.$store.commit("DISPLAY_ADD_ARTICLE_LINK");
     },
     PasswordCheck() {
-      // this.store.commit("runPasswordCheck");
       if (this.inputPassword == this.$store.state.adminPassword) {
         this.displayArticleAdder();
       } else alert("Wrong password, try again");
