@@ -8,7 +8,7 @@
       <div class="article-box">
         <h3>{{ article.title }}</h3>
         <h5 style="color: gray">{{ article.subtitle }}</h5>
-        <button id="deleteBtn" v-if="isAdmin" @click="deleteArticle">
+        <button id="deleteBtn" v-if="showDeleteButton" @click="deleteArticle">
           Delete
         </button>
       </div>
