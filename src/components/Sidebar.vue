@@ -28,6 +28,7 @@
 
 <script>
 import { mapState } from "vuex";
+import { mapMutations } from "vuex";
 export default {
   data() {
     return {
@@ -36,7 +37,7 @@ export default {
   },
   methods: {
     displayArticleAdder() {
-      this.$store.commit("DISPLAY_ADD_ARTICLE_LINK");
+      this.DISPLAY_ADD_ARTICLE_LINK;
     },
     PasswordCheck() {
       if (this.inputPassword == this.$store.state.adminPassword) {
@@ -44,7 +45,8 @@ export default {
       } else alert("Wrong password, try again");
   },
   computed: {
-    ...mapState(["showAddArticleLink"])
+    ...mapState(["showAddArticleLink"]),
+    ...mapMutations(["DISPLAY_ADD_ARTICLE_LINK"]),
   }
 };
 </script>
