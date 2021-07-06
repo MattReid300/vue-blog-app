@@ -8,7 +8,7 @@
         <div id="nav">
           <router-link to="/">Home</router-link>
           <router-link to="/about">About </router-link>
-          <router-link to="/articleadder" v-if="isAdmin"
+          <router-link to="/articleadder" v-if="showAddArticleLink"
             >Add Article</router-link
           >
         </div>
