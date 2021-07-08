@@ -6,8 +6,9 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    isAdmin: false,
+    showAddArticleLink: true,
     adminPassword: "letmepass",
+    showDeleteButton: false,
     articles: []
   },
   mutations: {

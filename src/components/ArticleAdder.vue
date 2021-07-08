@@ -56,4 +56,10 @@ textarea {
   margin: 20px auto;
   max-width: 750px;
 }
+@media screen and (max-width: 750px) {
+  .hello {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+}
 </style>

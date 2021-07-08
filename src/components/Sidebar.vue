@@ -8,7 +8,7 @@
         <div id="nav">
           <router-link to="/">Home</router-link>
           <router-link to="/about">About </router-link>
-          <router-link to="/articleadder" v-if="isAdmin"
+          <router-link to="/articleadder" v-if="showAddArticleLink"
             >Add Article</router-link
           >
         </div>
@@ -27,22 +27,24 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 export default {
   data() {
     return {
-      inputPassword: ""
+      inputPassword: "",
+      showAddArticleLink: this.$store.state.showAddArticleLink
     };
   },
   methods: {
     PasswordCheck() {
-      this.store.commit("IS_ADMIN", this.inputPassword);
+      if (this.inputPassword == this.$store.state.adminPassword) {
+        this.displayArticleAdder();
+      } else alert("Wrong password, try again");
+    },
+    displayArticleAdder() {
+      this.$store.commit("DISPLAY_ADD_ARTICLE_LINK");
     }
-  },
-  computed: {
-    ...mapState(["showAddArticleLink"])
   }
-};
+}
 </script>
 
 <style lang="css" scoped>
