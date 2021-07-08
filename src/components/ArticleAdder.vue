@@ -30,14 +30,19 @@ export default {
   methods: {
     ...mapActions(["createArticle"]),
     addArticle() {
-      let newArticle = Object.create(null);
-      newArticle["title"] = this.title;
-      newArticle["subtitle"] = this.subtitle;
-      newArticle["content"] = this.content;
-      this.createArticle(newArticle);
-      this.title = "";
-      this.subtitle = "";
-      this.content = "";
+      if (this.title == "" || this.subtitle == "" || this.content == "") {
+        alert("Please fill in all fields!");
+      } else {
+        let newArticle = Object.create(null);
+        newArticle["title"] = this.title;
+        newArticle["subtitle"] = this.subtitle;
+        newArticle["content"] = this.content;
+        this.createArticle(newArticle);
+        this.title = "";
+        this.subtitle = "";
+        this.content = "";
+        alert("Your article has been created successfully");
+      }
     }
   }
 };
