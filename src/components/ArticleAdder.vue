@@ -24,8 +24,7 @@ export default {
     return {
       title: "",
       subtitle: "",
-      content: "",
-      id: Math.floor(Math.random() * 10000000)
+      content: ""
     };
   },
   methods: {
@@ -35,7 +34,6 @@ export default {
       newArticle["title"] = this.title;
       newArticle["subtitle"] = this.subtitle;
       newArticle["content"] = this.content;
-      newArticle["id"] = this.id;
       this.createArticle(newArticle);
       this.title = "";
       this.subtitle = "";
