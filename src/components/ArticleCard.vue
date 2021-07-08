@@ -19,9 +19,11 @@
 <script>
 // import { mapState } from "vuex";
 export default {
-  // computed: {
-  //   ...mapState(["articles"])
-  // },
+  data() {
+    return {
+      showDeleteButton: this.$store.state.showDeleteButton
+    };
+  },
   props: {
     article: Object
   },
